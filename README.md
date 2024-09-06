@@ -12,7 +12,7 @@ Site is [live](https://maheavula.github.io/my-professional-website/)
 
 ## Contact
 
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+If you want to contact me you can reach me at [Twitter](https://www.linkedin.com/in/avula-maheswar-reddy-0998a529a/).
 
 ## License
 
