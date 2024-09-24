@@ -114,6 +114,10 @@ for (let i = 0; i < filterBtn.length; i++) {
 } */
 
 
+//alerts toggleindex
+
+
+
 
 // contact form variables
 const form = document.querySelector("[data-form]");

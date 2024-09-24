@@ -1046,7 +1046,6 @@ main {
 
 
 
-
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
@@ -1055,7 +1054,7 @@ main {
 
 .blog-posts-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 20px;
 }
 
@@ -1131,6 +1130,18 @@ main {
   line-height: 1.6;
 }
 
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 768px) {
+  .blog-posts-list {
+    grid-template-columns: 1fr 1fr 1fr; /* 2 columns for medium screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .blog-posts-list {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+}
 
 
 
@@ -1917,5 +1928,258 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
   .timeline-text { max-width: 700px; }
+
+
+  /**
+  * CTF Walkthroughs
+  */
+  /* CTF Walkthrough Section */
+.ctf-walkthroughs {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.h2.article-title {
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.h3.walkthroughs-title {
+  text-align: left;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* CTF List */
+.ctf-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.ctf-item {
+  width: calc(33.333% - 20px);
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ctf-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* CTF Image */
+.ctf-img {
+  text-align: center;
+}
+
+.ctf-img img {
+  width: 100%;
+  height: auto; /* Ensure images maintain aspect ratio */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.ctf-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Blog Meta */
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.blog-category {
+  color: #555;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.ctf-item-title {
+  color: #333;
+  font-weight: bold;
+}
+
+.ctf-item h2 {
+  color: #777;
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+
+
+
+/**
+Alerts
+*
+*/
+
+header.alerts-header {
+  margin-bottom: 10px;
+}
+
+/* Container for Alerts */
+.alerts-container {
+  width: 100%;
+  margin: auto;
+}
+
+/* Title styling */
+.h3.alerts-title {
+  text-align: left;
+  color: #333;
+}
+
+/* Header for alerts */
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+.alert-header span {
+  flex: 1;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.priority-header, .eventid-header, .eventtype-header {
+  flex: 0.5;
+}
+
+.rule-header {
+  flex: 2;
+}
+
+/* Alert summary layout */
+.alert-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alert-summary:hover {
+  background-color: #f0f0f0;
+}
+
+.alert-summary span {
+  text-align: center;
+}
+
+.priority {
+  flex: 0.5;
+}
+
+.rule {
+  flex: 2;
+}
+
+.time, .eventid, .eventtype {
+  flex: 1;
+}
+
+.alert-item:hover {
+  background-color: #ececec;
+}
+
+/* Style for active alert item */
+.alert-item.active {
+  background-color: #f9f9f9;
+}
+
+/* Toggle effect for alert details */
+.alert-item.active .alert-details {
+  max-height: 1000px; /* Large enough to show all content */
+  transition: max-height 0.6s ease-in-out;
+}
+
+/* Priority colors */
+.priority.high {
+  color: red;
+}
+
+.priority.medium {
+  color: orange;
+}
+
+.priority.low {
+  color: green;
+}
+
+/* Modern expandable effect */
+.alert-details {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #fafafa;
+  padding: 0 10px;
+  border-left: 4px solid #ddd;
+  margin-bottom: 10px;
+  transition: max-height 0.6s ease-in-out, padding 0.4s ease;
+}
+
+/* Aligning details in two columns */
+.details-left, .details-right {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  padding: 5px;
+}
+
+.details-full {
+  padding: 5px;
+  width: 100%;
+}
+
+/* Scoped styling for alert section */
+article.alerts-container {
+  margin-top: 30px;
+  border-top: 2px solid #ccc;
+}
+
+/* GitHub link styling */
+.github-link {
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.github-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.github-link:hover .github-icon {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+
+
+
 
 }
